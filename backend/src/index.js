@@ -12,6 +12,9 @@ app.use(express.json());
 const PORT = process.env.PORT || 4000;
 const FORTUNE_PRICE_CENTS = Number(process.env.FORTUNE_PRICE_CENTS || 100);
 
+// Optional: configure the exact product variant to charge via env
+const SHOPIFY_VARIANT_GID = process.env.SHOPIFY_VARIANT_GID;
+
 // In-memory store for pending purchases (demo only)
 const purchases = new Map();
 
@@ -33,7 +36,9 @@ app.post('/api/create-checkout', async (req, res) => {
   try {
     const storefrontUrl = `https://${storeDomain}/api/2024-10/graphql.json`;
     const mutation = `mutation checkoutCreate($input: CheckoutCreateInput!) { checkoutCreate(input: $input) { checkout { id webUrl } userErrors { field message } } }`;
-    const variables = { input: { lineItems: [{ variantId: "gid://shopify/ProductVariant/0", quantity: 1 }] } };
+    // Prefer a configured variant GID. If not provided, use a placeholder (likely to fail).
+    const variantId = SHOPIFY_VARIANT_GID || "gid://shopify/ProductVariant/0";
+    const variables = { input: { lineItems: [{ variantId, quantity: 1 }] } };
 
     const r = await axios.post(storefrontUrl, { query: mutation, variables }, {
       headers: { 'X-Shopify-Storefront-Access-Token': token, 'Content-Type': 'application/json' }

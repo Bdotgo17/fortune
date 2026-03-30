@@ -39,21 +39,23 @@ export default function App() {
   }
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', padding: 20 }}>
+    <div className="container">
       <h1>Fortune Reader</h1>
-      <p>Each fortune costs $1.00. Click below to start payment.</p>
+      <p className="small">Each fortune costs $1.00. Click below to start payment.</p>
 
-      <button onClick={start} disabled={loading}>Get Fortune ($1)</button>
+      <div style={{ marginTop: 12 }}>
+        <button onClick={start} disabled={loading}>Get Fortune ($1)</button>
+      </div>
 
       {checkoutId && (
         <div style={{ marginTop: 20 }}>
-          <p>After completing payment, click below to reveal your fortune.</p>
+          <p className="small">After completing payment, click below to reveal your fortune.</p>
           <button onClick={claim} disabled={loading}>Reveal Fortune</button>
         </div>
       )}
 
       {fortune && (
-        <div style={{ marginTop: 20, padding: 10, border: '1px solid #ddd' }}>
+        <div className="fortune-card">
           <strong>Your fortune:</strong>
           <p>{fortune}</p>
         </div>
