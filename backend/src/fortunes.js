@@ -8,7 +8,7 @@ const FORTUNES = [
   "A short trip will change your perspective.",
   "A new hobby will bring lasting happiness.",
   "Someone admires your dedication.",
-  "You will rediscover an old passion."
+  "You will rediscover an old passion.",
 ];
 
 function seededFortune(seed) {
