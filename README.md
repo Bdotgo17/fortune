@@ -1,4 +1,3 @@
-
 # Fortune App — Scaffold
 
 [![build](https://img.shields.io/github/actions/workflow/status/Bdotgo17/fortune/ci.yml?branch=main&label=build&logo=github&style=flat-square)](https://github.com/Bdotgo17/fortune/actions/workflows/ci.yml)
@@ -34,9 +33,9 @@ npm run dev
 Shopify notes
 
 - To enable real payments you must set the following in `backend/.env`:
-	- `SHOPIFY_STORE_DOMAIN` (e.g. `your-store.myshopify.com`)
-	- `SHOPIFY_STOREFRONT_TOKEN` (Storefront API access token)
-	- `SHOPIFY_VARIANT_GID` (Product variant GID to charge for)
+  - `SHOPIFY_STORE_DOMAIN` (e.g. `your-store.myshopify.com`)
+  - `SHOPIFY_STOREFRONT_TOKEN` (Storefront API access token)
+  - `SHOPIFY_VARIANT_GID` (Product variant GID to charge for)
 - The backend includes a webhook skeleton; in production you must verify HMAC signatures and persist purchases to a database.
 
 Security and limitations
