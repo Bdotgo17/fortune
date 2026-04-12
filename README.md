@@ -1,6 +1,8 @@
 # Fortune App — Scaffold
 
-[![build](https://img.shields.io/github/actions/workflow/status/Bdotgo17/fortune/ci.yml?branch=main&label=build&logo=github&style=flat-square)](https://github.com/Bdotgo17/fortune/actions/workflows/ci.yml)
+[![build](https://img.shields.io/github/actions/workflow/status/Bdotgo17/fortune/ci.yml?branch=main&label=build&style=for-the-badge)](https://github.com/Bdotgo17/fortune/actions/workflows/ci.yml)
+[![backend](https://img.shields.io/github/actions/workflow/status/Bdotgo17/fortune/ci.yml?branch=main&label=backend&job=Backend%20tests&style=for-the-badge)](https://github.com/Bdotgo17/fortune/actions/workflows/ci.yml)
+[![frontend](https://img.shields.io/github/actions/workflow/status/Bdotgo17/fortune/ci.yml?branch=main&label=frontend&job=Frontend%20build&style=for-the-badge)](https://github.com/Bdotgo17/fortune/actions/workflows/ci.yml)
 
 A small demo web app (Vite + React frontend, Express backend) that returns a short fortune after a $1 checkout. The repository includes a simulated local checkout flow and optional Shopify Storefront wiring.
 
